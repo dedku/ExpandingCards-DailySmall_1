@@ -21,6 +21,7 @@ document.body.innerHTML = `
     </div>
   </div>
 `
+// TODO add test to forEach && remodel function
 
 const panels: NodeListOf<Element> = getSelectorAll('.container__panel')
 

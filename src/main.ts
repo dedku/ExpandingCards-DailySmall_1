@@ -1,4 +1,6 @@
 import './scss/style.scss'
+import { getSelectorAll, removeActiveClasses } from './ts/activePanel'
+
 
 document.body.innerHTML = `
   <div class="container">
@@ -19,3 +21,12 @@ document.body.innerHTML = `
     </div>
   </div>
 `
+
+const panels: NodeListOf<Element> = getSelectorAll('.container__panel')
+
+panels.forEach(panel => {
+  panel.addEventListener('click', () => {
+    removeActiveClasses(panels)
+    panel.classList.add('container__panel__active')
+  })
+})
